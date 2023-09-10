@@ -1,7 +1,7 @@
 databases:
   - name: Love_Idle_DB
     databaseName: love_idle_db
-    user: Love_Idle
+    user: love_idle
     region: singapore
 
 services:
