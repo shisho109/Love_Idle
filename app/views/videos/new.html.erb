@@ -1,0 +1,20 @@
+<div class="video_submit">
+
+  <div class="head">
+    <h1>動画投稿ページ</h1>
+  </div>
+  <%= form_for @video do |f| %>
+    <div class="field">
+    <%= f.label :youtube_url %>
+    <%= f.text_field :youtube_url, :size => 140 %>
+    <%= f.label :動画の内容  %>
+    <%= f.text_area :title, :size => "30x10" %>
+    
+    </div>
+    <div class="submit">
+    <%= "推しの動画を投稿する！" %>
+    </div>
+  <% end %>
+
+  <div class="toppage"><%= link_to "動画投稿一覧に戻る", videos_path %></div>
+</div>

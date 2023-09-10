@@ -1,0 +1,49 @@
+<h1>アイドル紹介所</h1>
+<h3>イベント詳細</h3>
+<div class="event">
+  <p><%= @event.title %></p>
+  <p><%= @event.idea %></p>
+  <% if user_signed_in? %>
+      <% if current_user.already_captured?(@event) %>
+        <%= link_to event_capture_path(@event), method: :delete do %>
+            <i class="fas fa-heart"></i><%= @event.captures.count %>
+        <% end %>
+      <% else %>
+        <%= link_to event_captures_path(@event), method: :post do %>
+            <i class="far fa-heart"></i><%= @event.captures.count %>
+        <% end %>
+      <% end %>
+    <% else %>
+    <i class="far fa-heart"></i><%= @event.captures.count %>
+    <% end %>
+    <%= link_to "編集する", edit_event_path(@event.id) %>
+    </div>
+<h2>いいねしたユーザー</h2>
+<% @event.captured_users.each do |user| %>
+  <li><%= user.email %></li>
+<% end %>
+
+
+
+
+<div class="opinion-wrapper">
+  <p>コメント一覧</p>
+  <% @opinions.each do |c| %>
+    <div>
+      <%= c.user.email unless c.user.blank? %>
+      <br>
+      <%= c.content %>
+    </div>
+      <br>
+  <% end %>
+
+  <% if user_signed_in? %>
+    <%= form_with(model: [@event, @opinion], local: true) do |f| %>
+      <%= f.text_area :content %>
+      <%= button_tag type: "submit" do %>
+        <i class="far fa-comments"></i> コメントする
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+<%= link_to "イベント一覧に戻る", events_path %>

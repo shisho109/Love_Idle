@@ -1,0 +1,40 @@
+<div class="photo_page">
+<div class="toukoupage"><h1>画像一覧ページ</h1></div>
+  <div class="submit"><%= link_to "推しの画像を投稿する！", new_photo_path %></div>
+  <div class="photos-container">
+    <% @photos.each do |t| %>
+      <div class="photo">
+        <%= image_tag t.user.image_url, size: "250x200" if t.user.image? %>
+        <%= image_tag t.image_url, size: "250x200" if t.image? %>
+      </div>
+        <div class="shousai1">
+          <%= link_to t.user.name, user_path(t.user.id) %>
+          <%= t.group %>
+          <%= t.name %>
+          <%= t.about %>
+          <% if user_signed_in? && current_user.id == t.user_id %>
+          <%= link_to "編集する", edit_photo_path(t.id) %>
+          <% end %>
+        
+        <div class="shousai2">
+          <% if user_signed_in? %>
+            <% if current_user.already_favorited?(t) %>
+             <%= link_to photo_favorite_path(id: t.id, photo_id: t.id), method: :delete do %>
+               <i class="fas fa-heart"></i><%= t.favorites.count %>
+              <% end %>
+            <% else %>
+              <%= link_to photo_favorites_path(id: t.id, photo_id: t.id), method: :post do %>
+                <i class="far fa-heart"></i><%= t.favorites.count %>
+              <% end %>
+            <% end %>
+          <% else %>
+            <i class="far fa-heart"></i><%= t.favorites.count %>
+          <% end %>
+          <%= link_to "詳細へ", photo_path(t.id) %>
+        </div>
+        </div>
+      
+    
+    <% end %>
+  </div>
+</div>

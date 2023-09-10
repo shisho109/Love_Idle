@@ -1,0 +1,9 @@
+<%= form_for @photo do |f| %>
+    <%= f.label :group %>
+    <%= f.text_field :group, :size => 140 %> 
+    <%= f.label :name %>
+    <%= f.text_field :name, :size => 140 %> 
+    <%= f.label :about %>
+    <%= f.text_field :about, :size => 140 %> 
+    <%= f.submit "編集する" %>
+  <% end %>

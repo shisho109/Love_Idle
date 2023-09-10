@@ -1,0 +1,7 @@
+<%= form_for @event do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title, :size => 140 %> 
+    <%= f.label :idea %>
+    <%= f.text_field :idea, :size => 140 %> 
+    <%= f.submit "編集する" %>
+  <% end %>

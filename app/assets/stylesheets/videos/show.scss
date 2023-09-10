@@ -1,0 +1,41 @@
+.video_page{
+    background-color: #F2E2BA;
+    height:auto;
+
+    .atama{
+        text-align: center;
+    }
+
+    .show_container{
+        display: flex;
+        flex-direction: row;
+        
+        .detail{
+            display: flex;
+            flex-direction: column;
+
+            .detail1{
+                margin-top: auto;
+            }
+        }
+    }
+
+    .comment-wrapper{
+        line-height: 1;
+        .comment{
+            font-size: 15px;
+        }
+        .namae{
+            font-size: 15px;
+        }
+        .toppage{
+            width: 100%;
+            background-color: #F2E2BA;
+     
+            margin-right: 0px;
+        }
+        
+    }
+    
+    
+}
