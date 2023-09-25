@@ -1,18 +1,21 @@
-<h1>(アイドル紹介所)</h1>
-<h3>イベント紹介ページ</h3>
-<%= form_for @event do |f| %>
-
-  <div class="field">
-    <%= f.label :イベント名 %>
-    <%= f.text_field :title, :size => 30 %>
+<div class="eventpage">
+  <div class="title2">
+    <h1>イベント投稿ページ</h1>
   </div>
+  <%= form_for @event do |f| %>
 
-  <div class="field">
-    <%= f.label :コメント  %>
-    <%= f.text_area :idea, :size => "30x2" %>
-  </div>
+    <div class="field">
+      <%= f.label :イベント名 %>
+      <%= f.text_field :title, :size => 30 %>
+    </div>
 
-  <%= f.submit "投稿する" %>
-<% end %>
+    <div class="field">
+      <%= f.label :コメント  %>
+      <%= f.text_area :idea, :size => "30x2" %>
+    </div>
 
-<%= link_to "一覧に戻る", events_path %>
+    <%= f.submit "投稿する" %>
+  <% end %>
+
+  <%= link_to "一覧に戻る", events_path %>
+</div>
