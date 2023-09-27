@@ -1,19 +1,15 @@
 <div class="video_page">
-  <div class = "title">動画一覧ページ</div>
+  <div class = "title"><h2>動画一覧ページ<h2></div>
   <div class="submitarea">
     <%= link_to "推しの動画を投稿する！", new_video_path ,class:"submit"%>
   </div>
-  <% if user_signed_in? %>
-  <% end %>
   <div class="videos-container">
   <% @videos.each do |t| %>
      <div class="video1">
-    <%= image_tag t.user.image_url, size: "250x200" if t.user.image? %>
+   
 
     <div class="douga">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/>
-                <%= find_youtube_url(t.youtube_url) %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen %>
-      </iframe>
+      <iframe width="560" height="350" src="https://www.youtube.com/embed/<%= t.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     
     <div class="shousai1">

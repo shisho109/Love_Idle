@@ -11,11 +11,15 @@
 
     <div class="field">
       <%= f.label :コメント  %>
-      <%= f.text_area :idea, :size => "30x2" %>
+      <%= f.text_area :idea, :size => "170x20" %>
     </div>
 
-    <%= f.submit "投稿する" %>
+    <div class="submitarea">
+    <%= f.submit "イベントを紹介する" %>
+    </div>
   <% end %>
 
-  <%= link_to "一覧に戻る", events_path %>
+  <div class="toop">
+  <%= link_to "イベント一覧に戻る", events_path %>
+  </div>
 </div>

@@ -1,5 +1,5 @@
 <div class="photo_page">
-<div class="title"><h1>(画像投稿ページ)</h1></div>
+<div class="title"><h1>画像投稿ページ</h1></div>
 <%= form_for @photo do |f| %>
 
     <div class="field">
@@ -23,7 +23,7 @@
   </div>
 
   <div class="submit">
-  <%="推しの画像を投稿する！"%>
+  <%= f.submit "推しの画像を投稿する！"%>
   </div>
 <% end %>
 

@@ -1,21 +1,16 @@
-.eventpage{
-    height: 500px;
-    background-color: #F2E2BA;
+.mypage{
     font-family: 'M PLUS Rounded 1c', sans-serif;
-    .title2{
+
+    .titlee{
         text-align: center;
     }
-    .field{
-        display: flex;
-        flex-flow: column;
+    .deteil{
+        padding-left: 20px;
     }
-
-    .submitarea input[type="submit"] {
+    .teisyutu  input[type="submit"]{
         font-family: 'M PLUS Rounded 1c', sans-serif;
-       position: absolute;
-       top: 470px;
-       right: 10px;
-       display: inline-block;
+        text-align: center;
+        display: inline-block;
         border-radius: 11%;
         /* 角丸       */
         font-size: 22pt;
@@ -39,20 +34,29 @@
         border: 2px solid #f2b5d4;
         /* 枠の指定 */
     }
-    .submitarea:hover input[type="submit"] {
+    .teisyutu:hover input[type="submit"]  {
+        font-family: 'M PLUS Rounded 1c', sans-serif;
         box-shadow: none;
         /* カーソル時の影消去 */
-        color: #F5C3C2;
+        color: #f2b5d4;
         /* 背景色     */
         background: #FE7F9C;
         /* 文字色     */
     }
-
-    .toop{
-        position: absolute;
-        right: 0;
-        bottom: 0px;
-        font-size: 20px;
-        text-decoration: none;
+    .itiran{
+        text-align: center;
+        margin-top: -100px;
     }
+    .ichiran{
+        text-align: center;
+    }
+    .tophe{
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+    }
+    .kizon{
+        padding-left: 20px;
+    }
+
 }

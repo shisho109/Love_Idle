@@ -1,11 +1,10 @@
-<h1>Rooms#show</h1>
-<p>Find me in app/views/rooms/show.html.erb</p>
+<div class="DMpage">
+    <div class="uee"><h1>ダイレクトメッセージ</h1></div>
 
 <div class="user-in">
 <% @entries.each do |e| %>
-    <h3><strong><a href="/users/<%= e.user.id %>"><%= e.user.email%></a></strong></h3>
+    <h3><strong><a href="/users/<%= e.user.id %>"><%= e.user.email%>さん</a></strong></h3>
 <% end %>
-<p>2人のDM❤️</p>
 </div>
 
 <div class="dmMain">
@@ -15,14 +14,17 @@
     <% end %>
 
     <%= form_for @message do |f| %>
-    <%= f.text_field :body, :placeholder => "メッセージを入力して下さい" , :size => 100 %>
+    <%= f.text_field :body, :placeholder => "メッセージを入力して下さい" , :size => 90 %>
     <%= f.hidden_field :room_id, :value => @room.id %>
     <br>
-    <%= f.submit "送信する" %>
+    <div class="sousin">
+        <%= f.submit "送信する" %>
+    </div>
     <% end %>
 </div>
-
-<%= link_to "投稿一覧に戻る", events_path %>
+    <div class="mae">
+        <%= link_to "投稿一覧に戻る", events_path %>
+    </div>
 
 
 <style>
@@ -37,3 +39,4 @@
     background-color:gainsboro;
 }
 </style>
+</div>

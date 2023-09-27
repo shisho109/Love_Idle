@@ -1,14 +1,15 @@
 <div class="event_page">
-<div class="eventtoukou"><h1>イベント投稿一覧ページ</h1></div>
-<div class="submit"><%= link_to "イベントを紹介する！", new_event_path %></div>
+<div class="eventtoukou"><h2>イベント投稿一覧ページ</h2></div>
+<div class="submitt">
+<%= link_to "イベントを紹介する！", new_event_path ,class:"submittt"%></div>
   <div class="events-container">
     <% @events.each do |t| %>
       <div class="event">
         <div class="eventdetail">
-        <%= image_tag t.user.image_url, size: "250x200" if t.user.image? %>
-        <%= link_to t.user.name, user_path(t.user.id) %>
-        <%= t.title %>
-        <%= t.idea %>
+          <%= link_to t.user.name, user_path(t.user.id) %>
+          <p><%= t.title %></p>
+          <%= t.idea %>
+        </div>
         <% if user_signed_in? %>
         <% if current_user.already_captured?(t) %>
             <%= link_to event_capture_path(id: t.id, event_id: t.id), method: :delete do %>
@@ -22,13 +23,14 @@
     <% else %>
     <i class="far fa-heart"></i><%= t.captures.count %>
     <% end %>
-        <%= link_to "詳細へ", event_path(t.id) %> 
-      </div>
-      <% if user_signed_in? && current_user.id == t.user_id %>
+        <%= link_to "詳細・コメントページへ", event_path(t.id) %>
+        <% if user_signed_in? && current_user.id == t.user_id %>
         <%= link_to "編集する", edit_event_path(t.id) %>
-        <%= button_to "削除する", event_path(t.id), method: :delete %>
+        
         <% end %> 
+      </div> 
       </div>
+      
     <% end %>
   </div>
 </div>

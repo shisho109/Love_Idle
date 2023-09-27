@@ -1,7 +1,10 @@
-<h1>users#show</h1>
-<p>名前 : <%= @user.name %></p>
+<div class="mypage">
+<div class="titlee"><h1><%= @user.name %>さんのマイページ</h1></div>
+<div class="deteil">
+<p>ユーザー名 : <%= @user.name %></p>
 <p>メールアドレス : <%= @user.email %></p>
 <p>プロフィール : <%= @user.profile %></p>
+</div>
 
 <% if current_user.id == @user.id %>
   <%= link_to "編集する", edit_user_registration_path %>
@@ -11,30 +14,57 @@
     <%= @msg %>
 <% else %>
     <% if @isRoom == true %>
-        <p><%= link_to 'DMへ', room_path(@roomId) %></p>
+          <div class="kizon"><p><%= link_to 'DMへ', room_path(@roomId) %></p></div>
     <% else %>
         <%= form_for @room do |f| %>
             <%= fields_for @entry do |e|%>
                 <% e.hidden_field :user_id, value: @user.id %>
             <% end %>
+        <div class="teisyutu">
         <%= f.submit "DMを開始する"%>
         <% end %>
+        </div>
     <% end %>
 <% end %>
+  <div class="itiran">
+    <h2>ユーザーの投稿一覧</h2>
+    <div class="eventno">
+    <% @user.events.each do |t| %>
+    <%= t.title %>
+    <% end %>
+    </div>
+    <div class="photono">
+    <% @user.photos.each do |t| %>
+    <%= image_tag t.image_url, size: "250x200" if t.image? %>
+    <%= t.name %>
+    <% end %>
+    </div>
+    <div class="videono">
+    <% @user.videos.each do |t| %>
+    <%= t.comment %>
+    <% end %>
+    </div>
+  </div>
 
-<h2>ユーザーの投稿一覧</h2>
-<% @user.events.each do |t| %>
-  <%= t.user.name %>
-  <%= t.title %>
-<% end %>
-
-<h2>ユーザーがいいねした投稿一覧</h2>
-<% @user.captured_events.each do |t| %>
-  <%= t.user.name %>
-  <%= t.title %>
-<% end %>
+  <div class="ichiran">
+    <h2>ユーザーがいいねした投稿一覧</h2>
+    <% @user.captured_events.each do |t| %>
+    <%= t.user.name %>
+    <%= t.title %>
+    <% end %>
+    <% @user.favorited_photos.each do |t| %>
+    <%= t.user.name %>
+    <%= t.name %>
+    <% end %>
+    <% @user.liked_videos.each do |t| %>
+    <%= t.user.name %>
+    <%= t.comment %>
+    <% end %>
+  </div>
 <!-- ここまで-->
 
-<%= image_tag @user.image_url, size: "250x200" if @user.image? %>
 
-<%= link_to "Event一覧に戻る", events_path %>
+  <div class="tophe">
+    <%= link_to "Event一覧に戻る", events_path %>
+  </div>
+</div>

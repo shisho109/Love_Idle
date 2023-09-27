@@ -1,12 +1,15 @@
 .photo_page{
     height: 483px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
     .title{
         text-align: center;
     }
     .field{
         margin: 5px;
+        
     }
-    .submit{
+    .submit input[type="submit"] {
+        font-family: 'M PLUS Rounded 1c', sans-serif;
         position: absolute;
         top: 300px;
         right: 10px;
@@ -35,12 +38,13 @@
         /* 枠の指定 */
     }
 
-    .submit:hover {
+    .submit:hover input[type="submit"]  {
+        font-family: 'M PLUS Rounded 1c', sans-serif;
         box-shadow: none;
         /* カーソル時の影消去 */
         color: #f2b5d4;
         /* 背景色     */
-        background: #4d243d;
+        background: #FE7F9C;
         /* 文字色     */
     }
     .toppage{

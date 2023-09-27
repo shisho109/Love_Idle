@@ -1,15 +1,18 @@
 .video_page{
     background-color: #F2E2BA;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
     height: 5000px;
     width: 100%;
     .title{
         text-align: center;
+        font-size: 30px;
     }
     .submitarea{
         background-color: #F2E2BA;
         height: 100px;
     }
     .submit {
+        text-decoration: none;
         background-color: #F2E2BA;
         position: absolute;
         top: 125px;
@@ -44,7 +47,7 @@
         /* カーソル時の影消去 */
         color: #f2b5d4;
         /* 背景色     */
-        background: #4d243d;
+        background: #FE7F9C;
         /* 文字色     */
     }
 

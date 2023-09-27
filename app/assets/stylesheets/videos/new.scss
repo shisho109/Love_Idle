@@ -1,5 +1,6 @@
 .video_submit{
     background-color: #F2E2BA;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
     width: 100%;
     height: 500px;
     .head{
@@ -38,7 +39,7 @@
         /* 枠の指定 */
     }
 
-    .submit:hover {
+    .submit:hover input[type="submit"] {
         box-shadow: none;
         /* カーソル時の影消去 */
         color: #F5C3C2;
@@ -49,7 +50,9 @@
     .toppage{
         position: absolute;
         right: 0;
-        bottom: 0;
+        bottom: 15px;
+        font-size: 20px;
+        text-decoration: none;
 
     }
 }

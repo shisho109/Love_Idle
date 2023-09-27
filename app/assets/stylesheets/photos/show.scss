@@ -1,6 +1,24 @@
 .photo_page{
     background-color: #F2E2BA;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    .photo{
+        display: flex;
+    }
+    .shousaiii{
+        position: relative;
+        .shousaii{
+            display: flex;
+            position: absolute;
+            bottom: 0px;
+        }
+    }
+    
+ 
     .title{
         text-align: center;
+    }
+    .review-wrapper{
+        background-color: #F2E2BA;
+        width: 100%;
     }
 }

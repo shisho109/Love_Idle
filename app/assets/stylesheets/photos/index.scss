@@ -2,11 +2,14 @@
     background-color: #F2E2BA;
     height: 5000px;
     width: 100%;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
     
     .toukoupage{
         text-align: center;
+        font-size: 30px;
     }
-    .submit{
+    .submitte{
+      
         position: absolute;
         top: 125px;
         right: 10px;
@@ -33,28 +36,42 @@
         /* 影の設定 */
         border: 2px solid #f2b5d4;
         /* 枠の指定 */
+        text-decoration: none;
     }
 
-    .submit:hover {
+    .submitte:hover {
         box-shadow: none;
         /* カーソル時の影消去 */
         color: #f2b5d4;
         /* 背景色     */
-        background: #4d243d;
+        background: #FE7F9C;
         /* 文字色     */
     }
     .photos-container{
+        background-color: #F2E2BA;
         margin-top: 100px;
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
         font-size: 20px;
+        position: relative;
+        padding-left: 20px;
 
-        .shousai1{
+        .post{
             display: flex;
-            flex-flow: column;
+            
+        }
+        
+        .shousai1{
+            background-color: #F2E2BA;
+            display: flex;
+            flex-direction: column;
+            position: relative;
         }
         .shousai2{
-           margin-top: auto;
+            background-color: #F2E2BA;
+            position: absolute;
+            bottom: 0px;
+            
         }
     }
 }
